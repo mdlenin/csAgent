@@ -78,8 +78,9 @@ class Initialize:
 
             myDB = None
             objCount = len(response["data"]) - 1
+            connectorTypes = {"mySQL": ["MySQL", "FishbowlDesktop"]}
             for idx, obj in enumerate(response["data"]):
-                if obj["properties"]["conn_type"] == "MySQL":
+                if obj["properties"]["conn_type"] in connectorTypes["mySQL"]:
 
                     '''check mySQL credentials from yaml first and persist it'''
                     yamlCredentials = False
